@@ -3,7 +3,8 @@
   "version": "1.0.7",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "node public/js/mytest.test.js"
   },
   "dependencies": {
     "debug": "~2.1.1",
