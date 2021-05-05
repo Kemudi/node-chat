@@ -6,7 +6,7 @@
     "start": "node app.js",
     "test": "jest public/js/mytest.test.js"
   },
-  "devDependencies: {
+  "devDependencies": {
     "jest": "~24.9.0"
   },
   "dependencies": {
