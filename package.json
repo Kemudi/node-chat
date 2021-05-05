@@ -7,7 +7,7 @@
     "test": "jest public/js/mytest.test.js"
   },
   "devDependencies": {
-    "jest": "~24.9.0"
+    "jest": "^24.9.0"
   },
   "dependencies": {
     "debug": "~2.1.1",
