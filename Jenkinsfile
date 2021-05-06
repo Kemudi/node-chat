@@ -7,7 +7,7 @@ pipeline {
         stage('Build') { 
             steps {
                 echo 'Building...'
-                sh 'npm aainstall'
+                sh 'npm install'
                 sh 'npm run start'
                  script {
                    currentBuild.result == "UNSTABLE"
