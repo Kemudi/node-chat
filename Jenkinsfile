@@ -13,6 +13,9 @@ pipeline {
         }
         
         stage('Test') { 
+            when {
+                expression {currentBuild.result == "SUCCES"}
+            }
             steps {
                 echo 'Testing...'
                 sh 'npm install'
