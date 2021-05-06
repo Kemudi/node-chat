@@ -7,18 +7,18 @@ pipeline {
         stage('Build') { 
             steps {
                 echo 'Building...'
-                sh 'npm install'
+                sh 'npm aainstall'
+                sh 'npm run start'               
                 sh 'npm run start' 
             }
         }
-        
-        stage('Test') { 
-            when {
-              expression {
-                currentBuild.result == 'SUCCESS' 
-              }
-            }
+
+        stage('Test') {  
             steps {
+                script {
+                   if (currentBuild.result == 'UNSTABLE' || currentBuild.result == 'FAILURE')
+                      error('Build failed, pipeline is not continued')
+                }
                 echo 'Testing...'
                 sh 'npm install'
                 sh 'npm run test'
