@@ -9,13 +9,16 @@ pipeline {
                 echo 'Building...'
                 sh 'npm aainstall'
                 sh 'npm run start'
+                 script {
+                   currentBuild.result == "UNSTABLE"
+                 }
             }
         }
         
         stage('Test') { 
             steps {
                 script {
-                   if (currentBuild.result == "FAIL")
+                   if (currentBuild.result == "UNSTABLE")
                       error('Build failed, pipeline is not continued')
                 }
                 echo 'Testing...'
