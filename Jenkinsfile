@@ -11,7 +11,7 @@ pipeline {
                 sh 'npm run start'               
                 sh 'npm run start' 
                   script {
-                     currentBuild.result == 'FAILURE'
+                     currentBuild.result == 'UNSTABLE'
                   }
             }
         }
@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {  
             steps {
                 script {
-                   if (currentBuild.result == 'UNSTABLE' || currentBuild.result == 'FAILURE')
+                   if (currentBuild.result == 'UNSTABLE')
                       error('Build failed, pipeline is not continued')
                 }
                 echo 'Testing...'
