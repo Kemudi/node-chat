@@ -13,11 +13,11 @@ pipeline {
         }
         
         stage('Test') { 
-            script {
-                if (currentBuild.result == "UNSTABLE")
-                   error ("Build failed, pipeline is not continued")
-            }
             steps {
+                script {
+                   if (currentBuild.result == "UNSTABLE")
+                      error ("Build failed, pipeline is not continued")
+                }
                 echo 'Testing...'
                 sh 'npm install'
                 sh 'npm run test'
