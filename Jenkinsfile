@@ -10,7 +10,9 @@ pipeline {
                 sh 'npm install'
                 sh 'npm run start'               
                 sh 'npm run start' 
-                aa
+                  script {
+                     currentBuild.result == 'FAILURE'
+                  }
             }
         }
 
