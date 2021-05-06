@@ -8,20 +8,16 @@ pipeline {
             steps {
                 echo 'Building...'
                 sh 'npm install'
-                sh 'npm run start'
-                 script {
-                   currentBuild.result = 'UNSTABLE'
-                     error()
-                 }
+                sh 'npm run start' 
             }
         }
         
         stage('Test') { 
+            when {
+              expression {
+                currentBuild.result == 'SUCCESS' 
+              }
             steps {
-                script {
-                   if (currentBuild.result == 'UNSTABLE')
-                      error('Build failed, pipeline is not continued')
-                }
                 echo 'Testing...'
                 sh 'npm install'
                 sh 'npm run test'
