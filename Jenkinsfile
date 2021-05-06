@@ -15,7 +15,7 @@ pipeline {
         stage('Test') { 
             steps {
                 script {
-                   if (currentBuild.result == "UNSTABLE")
+                   if (currentBuild.result == "FAIL")
                       error('Build failed, pipeline is not continued')
                 }
                 echo 'Testing...'
