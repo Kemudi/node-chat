@@ -17,6 +17,7 @@ pipeline {
               expression {
                 currentBuild.result == 'SUCCESS' 
               }
+            }
             steps {
                 echo 'Testing...'
                 sh 'npm install'
