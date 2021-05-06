@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                    if (currentBuild.result == "UNSTABLE")
-                      error ("Build failed, pipeline is not continued")
+                      error('Build failed, pipeline is not continued')
                 }
                 echo 'Testing...'
                 sh 'npm install'
