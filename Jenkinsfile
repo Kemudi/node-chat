@@ -11,7 +11,7 @@ pipeline {
                 sh 'npm run start'               
                 sh 'npm run start' 
                   script {
-                     currentBuild.result = 'FAILURE'
+                     currentBuild.result = 'UNSTABLE'
                   }
             }
         }
