@@ -7,12 +7,11 @@ pipeline {
         stage('Build') { 
             steps {
                 echo 'Building...'
+                sh 'git checkout master'
+                sh 'git pull'
                 sh 'npm install'
                 sh 'npm run start'               
-                sh 'npm run start' 
-                  script {
-                     currentBuild.result = 'UNSTABLE'
-                  }
+             
             }
         }
 
