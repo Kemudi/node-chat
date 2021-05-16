@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                echo 'Building...  '
+                echo 'Building... '
                 sh 'git checkout master'
                 sh 'git pull'
                 sh 'npm install'          
