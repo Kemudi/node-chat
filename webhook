@@ -1,0 +1,22 @@
+"webhooks": [
+    {
+        "action": {
+        "type": "NO_IMPROVEMENT",
+        "period": "DAILY",
+        "severity": ["blockers", "criticals", "majors"]
+        },
+        "trigger": {
+            "type": "CRON",
+            "definition": "0 */1 * * * *"
+        },
+        {
+            "type": "POST",
+            "url": "https://hooks.slack.com/services/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",
+            "body" : {
+                "no_improvement": "{ 'text': No improvement'}",
+                "improvement": "{ 'text': Improvement ${diff}'",
+                "clean": "{ 'text': 'Clean'}"
+            }
+        }
+    }
+]
