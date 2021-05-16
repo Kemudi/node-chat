@@ -11,9 +11,6 @@ pipeline {
                 sh 'git pull'
                 sh 'npm install'
                 sh 'npm run start'               
-                 script {
-                     currentBuild.result = 'UNSTABLE'
-                  }
             }
         }
 
