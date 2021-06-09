@@ -7,4 +7,4 @@ RUN apt-get install --assume-yes g++
 COPY . node-chat/
 WORKDIR node-chat
 EXPOSE 3000
-RUN ls
+ENTRYPOINT npm start
